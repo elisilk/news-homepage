@@ -59,6 +59,7 @@ Hmm 🤔 ...
 - [Document: scroll event](https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event)
 - [Using CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) - For the popular section item numbers, I replaed static/hard-coded values with a CSS counter. Kevin Powell's [Dynamic numbering with CSS counters](https://youtu.be/tnSzkAiiQ4w?si=OzzluJ9yBpA0-21X) video was super helpful.
 - [Using HTML landmark roles to improve accessibility](https://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/) - Made sure to use semantic HTML and to explicitly label each of the major region landmarks used in the design.
+- [CSS Box Shadow Bottom Only](https://stackoverflow.com/questions/4561097/css-box-shadow-bottom-only)
 
 ### Continued development
 
@@ -66,11 +67,23 @@ Specific areas that the solution should be improved (known issues):
 
 - [Cards - Inclusive Components](https://inclusive-components.design/cards/) - Improve the card component, in particular, so that the entire card is interactive (on hover, focus, etc.).
 - Potentially animate the appearance of the mobile navigation menu.
-- Have the box-shadow for the sticky header appear only on the bottom side (not on the right and left side).
+- [Include a "skip to main content" link?](https://www.a11y-collective.com/blog/skip-to-main-content/)
+
+- Implement the suggestion from @bccpadge:
+
+```html
+<button aria-expanded="false" aria-controls="nav">
+  <span class="visually-hidden">Open mobile navigation</span>
+  <img src="assets/images/icon-menu.svg" alt="" />
+  <img src="assets/images/icon-menu-close.svg" alt="" />
+</button>
+```
 
 More general ideas I want to consider:
 
 Hmm 🤔 ...
+
+- [Designing Beautiful Shadows in CSS](https://www.joshwcomeau.com/css/designing-shadows/) by Josh Comeau - I definitely want to learn more about shadows and how to create them myself, so they are subtle and appropriate for the task. Right now, it feels like I am just copying the design or someone else's code and I don't know how to figure out what is best myself.
 
 ### Useful resources
 

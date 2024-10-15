@@ -1,5 +1,7 @@
 const header = document.getElementById("header");
 const navMenu = document.getElementById("nav");
+
+const navMenuControl = document.getElementById("nav-menu-control");
 const navMenuOpen = document.getElementById("nav-menu-open");
 const navMenuClose = document.getElementById("nav-menu-close");
 
@@ -11,14 +13,15 @@ document.addEventListener("scroll", (e) => {
   }
 });
 
-navMenuOpen.addEventListener("click", (e) => {
+navMenuControl.addEventListener("click", (e) => {
   e.preventDefault();
-  if (navMenu.classList.contains("nav--hidden"))
-    navMenu.classList.remove("nav--hidden");
-});
+  console.log("button clicked");
 
-navMenuClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (!navMenu.classList.contains("nav--hidden"))
+  if (navMenuControl.getAttribute("aria-expanded") == "true") {
     navMenu.classList.add("nav--hidden");
+    navMenuControl.setAttribute("aria-expanded", false);
+  } else {
+    navMenu.classList.remove("nav--hidden");
+    navMenuControl.setAttribute("aria-expanded", true);
+  }
 });

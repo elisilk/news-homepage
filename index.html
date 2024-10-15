@@ -19,9 +19,14 @@
         <span class="visually-hidden">W. news</span>
         <img src="assets/images/logo.svg" alt="W. logo">
       </div>
-      <a id="nav-menu-open" href="#"><img class="nav-menu-control" src="assets/images/icon-menu.svg" alt="Nav menu open icon"></a>
+
+      <button id="nav-menu-control" aria-expanded="false" aria-controls="nav">
+        <span class="visually-hidden">Open mobile navigation</span>
+        <img id="nav-menu-open" src="assets/images/icon-menu.svg" alt=""/>
+        <img id="nav-menu-close" src="assets/images/icon-menu-close.svg" alt=""/>
+      </button>
+
       <nav id="nav" class="nav--hidden" aria-label="Primary">
-        <a id="nav-menu-close" href="#"><img class="nav-menu-control" src="assets/images/icon-menu-close.svg" alt="Nav menu close icon"></a>
         <ul>
           <li>
             <a href="#" aria-current="page">Home</a>
@@ -42,7 +47,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <h1 class="visually-hidden">W. news homepage</h1>
       <div class="with-sidebar">
         <section class="section section--highlight" aria-labelledby="highlight-section-heading">

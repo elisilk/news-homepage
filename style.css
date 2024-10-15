@@ -16,6 +16,7 @@
   --clr-silver: hsl(236, 8%, 79%); /* #C5C6CE / Silver */
   --clr-gunmetal: hsl(237, 13%, 42%); /* #5E607A / Gunmetal */
   --clr-dark-space-blue: hsl(240, 100%, 5%); /* #00001A / Dark Space Blue */
+  --clr-dark-space-blue-rgb: rgb(0, 0, 26);
 
   /* Typography */
   --ff-sans: "Inter", sans-serif;
@@ -79,6 +80,7 @@ body {
   background-color: var(--clr-almost-white);
 
   min-height: 100vb;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,7 +109,7 @@ header {
 }
 
 .shadow {
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 10px 5px -5px rgba(0, 0, 26, 0.3);
 }
 
 main {
@@ -282,11 +284,6 @@ main {
 
 /* ----- Nav ----- */
 
-#nav-menu-open img {
-  height: 17px;
-  width: 40px;
-}
-
 nav {
   position: absolute;
   width: 16rem; /* 256px */
@@ -294,7 +291,7 @@ nav {
   top: 0;
   right: 0;
   padding-inline: 1.5rem; /* 24px */
-  padding-block: 1.6875rem; /* 27px */
+  padding-block-start: 9rem; /* 144px */
   background-color: var(--clr-almost-white);
 
   display: flex;
@@ -320,15 +317,44 @@ nav::before {
   display: none;
 }
 
-#nav-menu-close {
+#nav-menu-control {
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   height: 30.41px;
-  align-self: end;
+  width: 40px;
 }
 
-#nav-menu-close img {
+#nav-menu-control:focus img {
+  outline: 2px dashed var(--clr-red);
+  outline-offset: 0.25rem;
+}
+
+#nav-menu-open {
+  position: absolute;
+  height: 17px;
+  width: 40px;
+}
+
+#nav-menu-close {
+  position: absolute;
+  display: block;
   aspect-ratio: 1;
-  height: 100%;
+  height: 30.41px;
   width: auto;
+  z-index: 999;
+}
+
+#nav-menu-control[aria-expanded="false"] #nav-menu-close {
+  display: none;
+}
+
+#nav-menu-control[aria-expanded="true"] #nav-menu-close {
+  display: block;
 }
 
 nav ul {
@@ -352,7 +378,7 @@ nav ul a:active {
 }
 
 nav ul a:focus {
-  outline: 1px dashed var(--clr-red);
+  outline: 2px dashed var(--clr-red);
   outline-offset: 0.25rem;
 }
 
@@ -391,7 +417,7 @@ nav ul a:focus {
 }
 
 .section--new h3 a:focus {
-  outline: 1px dashed var(--clr-yellow);
+  outline: 2px dashed var(--clr-yellow);
   outline-offset: 0.25rem;
 }
 
@@ -414,7 +440,7 @@ nav ul a:focus {
 }
 
 .section--popular h3 a:focus {
-  outline: 1px dashed var(--clr-red);
+  outline: 2px dashed var(--clr-red);
   outline-offset: 0.25rem;
 }
 
@@ -446,7 +472,7 @@ nav ul a:focus {
 
 /* ----- Button ----- */
 
-button {
+.section--highlight button {
   cursor: pointer;
   color: var(--clr-dark-space-blue);
   background-color: var(--clr-red);
@@ -460,15 +486,15 @@ button {
   padding: 0.75rem 1.875rem; /* 12px 30px */
 }
 
-button:hover,
-button:focus,
-button:active {
+.section--highlight button:hover,
+.section--highlight button:focus,
+.section--highlight button:active {
   color: var(--clr-almost-white);
   background-color: var(--clr-dark-space-blue);
 }
 
-button:focus {
-  outline: 1px dashed var(--clr-dark-space-blue);
+.section--highlight button:focus {
+  outline: 2px dashed var(--clr-red);
   outline-offset: 0.25rem;
 }
 
@@ -507,8 +533,7 @@ button:focus {
     padding-inline: 1.75rem;
   }
 
-  #nav-menu-open,
-  #nav-menu-close {
+  #nav-menu-control {
     display: none;
   }
 
