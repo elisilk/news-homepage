@@ -72,6 +72,8 @@ img {
 }
 
 body {
+  --padding-block: 1.75rem; /* 28px */
+
   font-family: var(--ff-sans);
   color: var(--clr-gunmetal);
   background-color: var(--clr-almost-white);
@@ -87,7 +89,6 @@ body {
 
 header,
 main {
-  --padding-block: 1.75rem; /* 28px */
   max-width: calc(1110px + 2 * 1.75rem); /* 1110px + 2 * 1.75rem */
   width: 100%;
 }
@@ -477,6 +478,7 @@ button:active {
   /* 800px */
 
   body {
+    --padding-block: 5.5625rem; /* 89px */
     justify-content: center;
   }
 
