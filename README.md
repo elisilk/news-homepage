@@ -60,6 +60,10 @@ Hmm 🤔 ...
 - [Using CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) - For the popular section item numbers, I replaed static/hard-coded values with a CSS counter. Kevin Powell's [Dynamic numbering with CSS counters](https://youtu.be/tnSzkAiiQ4w?si=OzzluJ9yBpA0-21X) video was super helpful.
 - [Using HTML landmark roles to improve accessibility](https://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/) - Made sure to use semantic HTML and to explicitly label each of the major region landmarks used in the design.
 - [CSS Box Shadow Bottom Only](https://stackoverflow.com/questions/4561097/css-box-shadow-bottom-only)
+- Implemented the suggestion from [@bccpadge](https://www.frontendmentor.io/profile/bccpadge) to [use the `<button>` element](https://www.frontendmentor.io/solutions/news-homepage-with-semantic-html-and-aria-labeledby-headings-OtaYIB_Bqz) for the mobile navigation menu control. Thank you [@bccpadge](https://www.frontendmentor.io/profile/bccpadge) for the feedback and the suggestion.
+  - [`aria-expanded`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded)
+  - [Practical Guide on Implementing ‘aria-expanded’ in Web Development](https://www.a11y-collective.com/blog/aria-expanded/)
+  - [Navigation Menubar Example](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/)
 
 ### Continued development
 
@@ -68,16 +72,6 @@ Specific areas that the solution should be improved (known issues):
 - [Cards - Inclusive Components](https://inclusive-components.design/cards/) - Improve the card component, in particular, so that the entire card is interactive (on hover, focus, etc.).
 - Potentially animate the appearance of the mobile navigation menu.
 - [Include a "skip to main content" link?](https://www.a11y-collective.com/blog/skip-to-main-content/)
-
-- Implement the suggestion from @bccpadge:
-
-```html
-<button aria-expanded="false" aria-controls="nav">
-  <span class="visually-hidden">Open mobile navigation</span>
-  <img src="assets/images/icon-menu.svg" alt="" />
-  <img src="assets/images/icon-menu-close.svg" alt="" />
-</button>
-```
 
 More general ideas I want to consider:
 
