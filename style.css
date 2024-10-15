@@ -351,6 +351,11 @@ nav ul a:active {
   color: var(--clr-red);
 }
 
+nav ul a:focus {
+  outline: 1px dashed var(--clr-red);
+  outline-offset: 0.25rem;
+}
+
 /* ----- Headings ----- */
 
 .section--highlight h3 {
@@ -385,6 +390,11 @@ nav ul a:active {
   text-decoration: none;
 }
 
+.section--new h3 a:focus {
+  outline: 1px dashed var(--clr-yellow);
+  outline-offset: 0.25rem;
+}
+
 .section--popular h3 {
   font-size: var(--fs-heading-xs);
   font-weight: var(--fw-extrabold);
@@ -401,6 +411,11 @@ nav ul a:active {
 .section--popular h3 a:active {
   color: var(--clr-red);
   text-decoration: none;
+}
+
+.section--popular h3 a:focus {
+  outline: 1px dashed var(--clr-red);
+  outline-offset: 0.25rem;
 }
 
 /* ----- Body Text ----- */
@@ -450,6 +465,11 @@ button:focus,
 button:active {
   color: var(--clr-almost-white);
   background-color: var(--clr-dark-space-blue);
+}
+
+button:focus {
+  outline: 1px dashed var(--clr-dark-space-blue);
+  outline-offset: 0.25rem;
 }
 
 /* ----- Utilities ----- */

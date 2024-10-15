@@ -46,8 +46,8 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- Fluid typography and spacing
-- Accessibility (how so?)
+- Fluid typography
+- Accessibility
 
 ### What I learned
 
@@ -65,6 +65,8 @@ Hmm 🤔 ...
 Specific areas that the solution should be improved (known issues):
 
 - [Cards - Inclusive Components](https://inclusive-components.design/cards/) - Improve the card component, in particular, so that the entire card is interactive (on hover, focus, etc.).
+- Potentially animate the appearance of the mobile navigation menu.
+- Have the box-shadow for the sticky header appear only on the bottom side (not on the right and left side).
 
 More general ideas I want to consider:
 
