@@ -251,6 +251,22 @@ main {
   gap: 0.5rem;
 }
 
+.section--popular .counter {
+  counter-reset: popular-article-counter;
+}
+
+.section--popular .counter > li {
+  counter-increment: popular-article-counter;
+}
+
+.section--popular .card--content::before {
+  content: counter(popular-article-counter, decimal-leading-zero);
+  color: var(--clr-red);
+  font-size: var(--fs-heading-m);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading-mlxl);
+}
+
 /* ----- Logo ----- */
 
 .logo img {
@@ -362,13 +378,6 @@ nav ul a:hover {
 .section--new h3 a:hover {
   color: var(--clr-yellow);
   text-decoration: none;
-}
-
-.section--popular span {
-  color: var(--clr-red);
-  font-size: var(--fs-heading-m);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-heading-mlxl);
 }
 
 .section--popular h3 {

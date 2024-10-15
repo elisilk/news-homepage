@@ -16,15 +16,15 @@
 
     <header id="header">
       <div class="logo">
-        <span class="visually-hidden">W.</span>
+        <span class="visually-hidden">W. news</span>
         <img src="assets/images/logo.svg" alt="W. logo">
       </div>
       <a id="nav-menu-open" href="#"><img class="nav-menu-control" src="assets/images/icon-menu.svg" alt="Nav menu open icon"></a>
-      <nav id="nav" class="nav--hidden">
+      <nav id="nav" class="nav--hidden" aria-label="Primary">
         <a id="nav-menu-close" href="#"><img class="nav-menu-control" src="assets/images/icon-menu-close.svg" alt="Nav menu close icon"></a>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="#" aria-current="page">Home</a>
           </li>
           <li>
             <a href="#">New</a>
@@ -45,8 +45,8 @@
     <main>
       <h1 class="visually-hidden">W. news homepage</h1>
       <div class="with-sidebar">
-        <section class="section section--highlight">
-          <h2 class="visually-hidden">Highlight</h2>
+        <section class="section section--highlight" aria-labelledby="highlight-section-heading">
+          <h2 id="highlight-section-heading" class="visually-hidden">Highlight</h2>
           <picture>
             <source srcset="assets/images/image-web-3-desktop.jpg" media="(min-width: 600px)"/>
             <img src="assets/images/image-web-3-mobile.jpg" alt="Web 3.0 illustration">
@@ -60,8 +60,8 @@
           </div>
         </section>
 
-        <section class="section section--new">
-          <h2>New</h2>
+        <aside class="section section--new" aria-labelledby="new-section-heading">
+          <h2 id="new-section-heading">New</h2>
           <ul>
             <li>
               <h3>
@@ -82,16 +82,15 @@
               <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
             </li>
           </ul>
-        </section>
+        </aside>
       </div>
 
-      <section class="section section--popular">
-        <h2 class="visually-hidden">Popular</h2>
-        <ul class="switcher">
+      <aside class="section section--popular" aria-labelledby="popular-section-heading">
+        <h2 class="visually-hidden" id="popular-section-heading">Popular</h2>
+        <ul class="switcher counter">
           <li class="card">
             <img src="assets/images/image-retro-pcs.jpg" alt="Reviving Retro PCs photo">
             <div class="card--content">
-              <span>01</span>
               <h3>
                 <a href="#">Reviving Retro PCs</a>
               </h3>
@@ -101,7 +100,6 @@
           <li class="card">
             <img src="assets/images/image-top-laptops.jpg" alt="Top 10 Laptops of 2022 photo">
             <div class="card--content">
-              <span>02</span>
               <h3>
                 <a href="#">Top 10 Laptops of 2022</a>
               </h3>
@@ -111,7 +109,6 @@
           <li class="card">
             <img src="assets/images/image-gaming-growth.jpg" alt="The Growth of Gaming photo">
             <div class="card--content">
-              <span>03</span>
               <h3>
                 <a href="#">The Growth of Gaming</a>
               </h3>
@@ -119,7 +116,7 @@
             </div>
           </li>
         </ul>
-      </section>
+      </aside>
     </main>
 
   </body>

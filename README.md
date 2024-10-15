@@ -53,16 +53,22 @@ Users should be able to:
 
 Hmm 🤔 ...
 
+- [Every Layout](https://every-layout.dev/) - So many useful layout techniques throughout this resource.
+  - [The Switcher](https://every-layout.dev/layouts/switcher/) - for the popular section
+  - [The Sidebar](https://every-layout.dev/layouts/sidebar/) - for the main section with the new section as the sidebar to the highlight section
+- [Document: scroll event](https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event)
+- [Using CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) - For the popular section item numbers, I replaed static/hard-coded values with a CSS counter. Kevin Powell's [Dynamic numbering with CSS counters](https://youtu.be/tnSzkAiiQ4w?si=OzzluJ9yBpA0-21X) video was super helpful.
+- [Using HTML landmark roles to improve accessibility](https://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/) - Made sure to use semantic HTML and to explicitly label each of the major region landmarks used in the design.
+
 ### Continued development
 
 Specific areas that the solution should be improved (known issues):
 
+- [Cards - Inclusive Components](https://inclusive-components.design/cards/) - Improve the card component, in particular, so that the entire card is interactive (on hover, focus, etc.).
+
 More general ideas I want to consider:
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+Hmm 🤔 ...
 
 ### Useful resources
 
