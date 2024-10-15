@@ -1,0 +1,503 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400, 700, 800;
+  src: url("assets/fonts/Inter-VariableFont_slnt%2Cwght.ttf") format("truetype");
+}
+
+/* ----- Custom properties ----- */
+
+:root {
+  /* Colors */
+  --clr-yellow: hsl(35, 78%, 62%); /* #E9AA52 / Yellow  */
+  --clr-red: hsl(5, 85%, 63%); /* #F15D51 / Light Vermillion */
+
+  --clr-almost-white: hsl(36, 100%, 99%); /* #FFFDFA / Almost White */
+  --clr-silver: hsl(236, 8%, 79%); /* #C5C6CE / Silver */
+  --clr-gunmetal: hsl(237, 13%, 42%); /* #5E607A / Gunmetal */
+  --clr-dark-space-blue: hsl(240, 100%, 5%); /* #00001A / Dark Space Blue */
+
+  /* Typography */
+  --ff-sans: "Inter", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-heading-mlxl: 1;
+  --lh-heading-s: 1.2; /* 24/20 */
+  --lh-heading-xs: 1.333333; /* 24/18 */
+  --lh-body: 1.733333; /* 26/15 */
+  --lh-button: 1.714286; /* 24/14 */
+
+  /* Static typography */
+
+  --fs-heading-l: 2.5rem; /* 40px / lh 40px / ls 0px / Bold */
+  --fs-heading-m: 2rem; /* 32px / lh 32px / ls 0px / Bold */
+  --fs-heading-s: 1.25rem; /* 20px / lh 24px / ls 0px / Extra Bold */
+  --fs-heading-xs: 1.125rem; /* 18px / lh 24px / ls 0px / Extra Bold */
+  --fs-body: 0.9375rem; /* 15px / lh 26px / ls 0px / Regular */
+  --fs-button: 0.875rem; /* 14px / lh 24px / ls 4.38px / Bold */
+
+  /* Fluid typography */
+  /* Mobile (m) 25rem (400px) -> Desktop (d) 50rem (800px) */
+  --fs-heading-l-xl: clamp(
+    2.5rem,
+    1.5rem + 4vw,
+    3.5rem
+  ); /* (m) 40px -> (d) 56px / lh 56 / ls 0 / Extra Bold */
+  --fs-heading-m-l: clamp(
+    2rem,
+    1.5rem + 2vw,
+    2.5rem
+  ); /* (m) 32px -> (d) 40px */
+}
+
+/* ----- Global styling ----- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--ff-sans);
+  color: var(--clr-gunmetal);
+  background-color: var(--clr-almost-white);
+
+  min-height: 100vb;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+/* ----- Layout components ----- */
+
+header,
+main {
+  --padding-block: 1.75rem; /* 28px */
+  max-width: calc(1110px + 2 * 1.75rem); /* 1110px + 2 * 1.75rem */
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--clr-almost-white);
+
+  padding-block-start: var(--padding-block);
+  padding-block-end: 2rem; /* (m) 32px -> (d) 55px */
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shadow {
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+main {
+  padding-inline: 1rem;
+  padding-block-end: var(--padding-block);
+  display: grid;
+  gap: 4rem; /* 64px */
+}
+
+/* ----- Sidebar layout ----- */
+
+/* Ref: https://every-layout.dev/layouts/sidebar/ */
+
+.with-sidebar {
+  --s1: clamp(
+    1.875rem,
+    6.125rem + -8.5vw,
+    4rem
+  ); /* (m) [4rem=64px] -> (d) 30px */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.with-sidebar > :last-child {
+  /* the sidebar */
+  flex-basis: 21.875rem; /* 350px */
+  flex-grow: 1;
+}
+
+.with-sidebar > :first-child {
+  /* the primary content */
+  flex-basis: 0;
+  flex-grow: 999999;
+  min-inline-size: 50%;
+}
+
+/* ----- Switcher layout ----- */
+
+/* Ref: https://every-layout.dev/layouts/switcher/ */
+
+.switcher {
+  --s1: 1.875rem; /* 30px */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((47.5rem - 100%) * 999);
+  /* 48rem = 760px -- Threshold -- The container width at which the component switches between a horizontal and vertical layout */
+}
+
+.switcher > :nth-last-child(n + 4),
+.switcher > :nth-last-child(n + 4) ~ * {
+  flex-basis: 100%;
+}
+
+/* ----- Sections ----- */
+
+/* ----- Section - Highlight ----- */
+
+.section--highlight {
+  display: grid;
+  align-content: space-between;
+  gap: 1rem;
+}
+
+.section--highlight .card {
+  --s1: 1.875rem; /* 30px */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: var(--s1);
+}
+
+.section--highlight .card > :last-child {
+  /* the sidebar */
+  flex-basis: 21.875rem; /* 350px */
+  flex-grow: 1;
+}
+
+.section--highlight .card > :first-child {
+  /* the primary content */
+  flex-basis: 0;
+  flex-grow: 999999;
+  min-inline-size: 35%;
+}
+
+.section--highlight .card--text {
+  display: grid;
+  justify-items: start;
+  gap: 1.5rem; /* (m) 24px -> (d) 29px */
+}
+
+/* ----- Section - New ----- */
+
+.section--new {
+  background-color: var(--clr-dark-space-blue);
+  padding: 24px 20.5px; /* (m) 24px 20.5px -> (d) 32px 24px */
+  display: grid;
+  gap: 2.1875rem; /* 35px (m) -> (d) 33px */
+}
+
+.section--new ul {
+  --padding-block: 30px; /* 33px */
+  list-style: none;
+  display: grid;
+  gap: var(--padding-block);
+}
+
+.section--new li {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.section--new li:not(:first-child) {
+  border-top: 1px solid var(--clr-gunmetal);
+  padding-block-start: var(--padding-block);
+}
+
+/* ----- Section - Popular ----- */
+
+.section--popular ul {
+  list-style: none;
+}
+
+.section--popular .card {
+  display: flex;
+  gap: 1.5rem; /* 24px */
+  align-items: start;
+}
+
+.section--popular .card img {
+  width: 100px;
+  height: auto;
+}
+
+.section--popular .card--content {
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* ----- Logo ----- */
+
+.logo img {
+  aspect-ratio: 1.606429; /* 44.98 / 28 =  */
+  height: clamp(
+    1.75rem,
+    1.00625rem + 2.9749999999999996vw,
+    2.49375rem
+  ); /* (m) 28px -> (d) 39.9px */
+  width: auto;
+}
+
+/* ----- Nav ----- */
+
+#nav-menu-open img {
+  height: 17px;
+  width: 40px;
+}
+
+nav {
+  position: absolute;
+  width: 16rem; /* 256px */
+  height: 100vb;
+  top: 0;
+  right: 0;
+  padding-inline: 1.5rem; /* 24px */
+  padding-block: 1.6875rem; /* 27px */
+  background-color: var(--clr-almost-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5.375rem; /* 86.29px ~= 86px */
+}
+
+/* the shadow underneath the popup mobile nav */
+nav::before {
+  content: "";
+  top: 0;
+  right: 0;
+  z-index: -1;
+  position: absolute;
+  background-color: var(--clr-dark-space-blue);
+  opacity: 0.5;
+  width: 100vi;
+  height: 100vb;
+}
+
+.nav--hidden {
+  display: none;
+}
+
+#nav-menu-close {
+  height: 30.41px;
+  align-self: end;
+}
+
+#nav-menu-close img {
+  aspect-ratio: 1;
+  height: 100%;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: grid;
+  gap: 1.5rem; /* 24px */
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--clr-dark-space-blue);
+  font-size: 1.125rem; /* (m) 18/24/Regular -> (d) Body */
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-heading-xs);
+}
+
+nav ul a:hover {
+  color: var(--clr-red);
+}
+
+/* ----- Headings ----- */
+
+.section--highlight h3 {
+  color: var(--clr-dark-space-blue);
+  font-size: var(--fs-heading-l-xl); /* (m) 40px -> (d) XL */
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-heading-mlxl);
+}
+
+.section--new h2 {
+  color: var(--clr-yellow);
+  font-size: var(--fs-heading-m-l); /* (m) M -> (d) L */
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading-mlxl);
+}
+
+.section--new h3 {
+  font-size: var(--fs-heading-s);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-heading-s);
+}
+
+.section--new h3 a {
+  color: var(--clr-almost-white);
+  text-decoration: none;
+}
+
+.section--new h3 a:hover {
+  color: var(--clr-yellow);
+  text-decoration: none;
+}
+
+.section--popular span {
+  color: var(--clr-red);
+  font-size: var(--fs-heading-m);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading-mlxl);
+}
+
+.section--popular h3 {
+  font-size: var(--fs-heading-xs);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-heading-xs);
+}
+
+.section--popular h3 a {
+  color: var(--clr-dark-space-blue);
+  text-decoration: none;
+}
+
+.section--popular h3 a:hover {
+  color: var(--clr-red);
+  text-decoration: none;
+}
+
+/* ----- Body Text ----- */
+
+.section--highlight p {
+  color: var(--clr-gunmetal);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+
+.section--new p {
+  color: var(--clr-silver);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+
+.section--popular p {
+  color: var(--clr-gunmetal);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+
+/* ----- Button ----- */
+
+button {
+  cursor: pointer;
+  color: var(--clr-dark-space-blue);
+  background-color: var(--clr-red);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-button);
+  letter-spacing: 4.38px;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.75rem 1.875rem; /* 12px 30px */
+}
+
+button:hover {
+  color: var(--clr-almost-white);
+  background-color: var(--clr-dark-space-blue);
+}
+
+/* ----- Utilities ----- */
+
+.hidden {
+  display: none;
+}
+
+/* ----- Visually hidden utility ----- */
+
+/* Source: https://www.scottohara.me/blog/2023/03/21/visually-hidden-hack.html */
+/* sometimes referred to as .sr-only */
+
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* ----- Media Queries ----- */
+
+@media (width >= 50rem) {
+  /* 800px */
+
+  header,
+  main {
+    padding-inline: 1.75rem;
+  }
+
+  #nav-menu-open,
+  #nav-menu-close {
+    display: none;
+  }
+
+  .nav--hidden {
+    display: unset;
+  }
+
+  nav::before {
+    display: none;
+  }
+
+  nav {
+    position: unset;
+    width: unset; /* 256px */
+    height: unset;
+    padding: 0;
+
+    display: flex;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.78125rem; /* 44.5px */
+  }
+
+  nav ul a {
+    color: var(--clr-gunmetal);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+  .section--new {
+    padding: 32px 24px; /* (m) 24px 21px -> (d) 32px 24px */
+    gap: 33px; /* 35px (m) -> (d) 33px */
+  }
+}
