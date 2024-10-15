@@ -26,11 +26,11 @@ Users should be able to:
 
 ### Screenshot
 
-|             Mobile designed at 375px:              |             Tablet designed at 768px:              |             Desktop designed at 1440px:             |
-| :------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------: |
-|      ![](./screenshots/screenshot-mobile.png)      |      ![](./screenshots/screenshot-tablet.png)      |      ![](./screenshots/screenshot-desktop.png)      |
-|                Mobile (completed):                 |                Tablet (completed):                 |                Desktop (completed):                 |
-| ![](./screenshots/screenshot-mobile-completed.png) | ![](./screenshots/screenshot-tablet-completed.png) | ![](./screenshots/screenshot-desktop-completed.png) |
+|          Mobile designed at 375px:           |           Desktop designed at 1440px:           |
+| :------------------------------------------: | :---------------------------------------------: |
+|   ![](./screenshots/screenshot-mobile.png)   |    ![](./screenshots/screenshot-desktop.png)    |
+|             Mobile (completed):              |              Desktop (completed):               |
+| ![](./screenshots/screenshot-mobile-nav.png) | ![](./screenshots/screenshot-desktop-hover.png) |
 
 ### Links
 
